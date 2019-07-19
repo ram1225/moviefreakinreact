@@ -1,12 +1,11 @@
 import React,{Component} from "react";
-import Loader from "./Loader";
-import "../App.css";
+import Loader from "./loader/Loader";
+import '../containers/App.css';
 
 function Card(props){
   const items = props.data.results;
   const imageBaseUrl = "http://image.tmdb.org/t/p/w185/";
   return ( 
-   
       <div className="card-container">
         { items.map((item, index)=>(
             <div className="card" key={index}>
@@ -16,10 +15,7 @@ function Card(props){
           </div>
         ))
         }
-      </div>
-    
-   
-  )
+      </div>)
 }
 export default class Trending extends Component{
   constructor(props) {

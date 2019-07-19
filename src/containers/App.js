@@ -1,10 +1,10 @@
 import React, { Component } from "react";
-import NavBar from "./NavBar";
-import Header from "./Header";
-import Trending from "./Trending";
-import Comingsoon from "./ComingSoon";
-import Favorites from "./Favorites";
-import "../App.css";
+import NavBar from "../components/navigation/NavBar";
+import Header from "../components/header/Header";
+import Trending from "../components/Trending";
+import Comingsoon from "../components/ComingSoon";
+import Favorites from "../components/Favorites";
+import "./App.css";
 import {
   BrowserRouter as Router,
   Route
