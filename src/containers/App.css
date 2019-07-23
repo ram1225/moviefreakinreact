@@ -186,11 +186,38 @@ ul li:hover,
   position: relative;
 }
 
+
+
+.card:hover  button{
+  position: absolute;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: #ff424f;
+  border: none;
+  border-radius: 5px;
+  height: 25px;
+  color: white;
+  font-size: 15px;
+}
+
+.card:hover img {
+  opacity: 0.2;
+}
+
+.show-card{
+  display: flex;
+}
+
+.hide-card{
+  display: none;
+}
+
 .card p {
   text-align: center;
 }
 
-.card p:last-child {
+.title {
   overflow: hidden;
   text-overflow: ellipsis;
   width: 200px;

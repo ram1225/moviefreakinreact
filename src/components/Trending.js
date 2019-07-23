@@ -2,20 +2,35 @@ import React,{Component} from "react";
 import Loader from "./loader/Loader";
 import '../containers/App.css';
 
-function Card(props){
-  const items = props.data.results;
-  const imageBaseUrl = "http://image.tmdb.org/t/p/w185/";
-  return ( 
-      <div className="card-container">
-        { items.map((item, index)=>(
-            <div className="card" key={index}>
-            <img alt={item.original_title} src={imageBaseUrl+item.poster_path} className="card-image"/>
-            <p className="rating">{item.vote_average}</p>
-            <p style={{marginBottom: '20px'}}>{item.title}</p>
-          </div>
-        ))
-        }
-      </div>)
+class Card extends Component{
+  state={
+    isHovered: false
+  }
+/*   handleHover=()=>{
+    this.setState(prevState => ({
+        isHovered: !prevState.isHovered
+    }));
+} */
+  render(){
+    const items = this.props.data.results;
+    const imageBaseUrl = "http://image.tmdb.org/t/p/w185/";
+
+    return ( 
+        <div className="card-container">
+          { items.map((item, index)=>(
+            <div key={index} className="card" 
+                onMouseEnter={()=>this.props.onHandleHover(index,true)}
+                onMouseLeave={()=>this.props.onHandleHover(index,false)}>
+                <img alt={item.original_title} src={imageBaseUrl+item.poster_path} className="card-image"/>
+                <p className="rating">{item.vote_average}</p>
+                <p style={{marginBottom: '20px'}} className="title">{item.title}</p>
+                <button className={`${!item.isHovered?'hide-card':''}`}>More details</button>
+              </div>
+          ))
+          }
+        </div>)
+  }
+
 }
 export default class Trending extends Component{
   constructor(props) {
@@ -27,7 +42,16 @@ export default class Trending extends Component{
     Window.timeOut = {};
     this.fetchData = this.fetchData.bind(this); 
   }
+  handleHover=(index,value)=>{
 
+    let data= {...this.state.data}
+    data.results[index]['isHovered']=value;
+    this.setState(prevState => ({
+        data: data
+    }));
+
+    console.log(data)
+}
   componentDidMount() {
     this.fetchData().then(data => {
       this.setState({
@@ -61,7 +85,7 @@ export default class Trending extends Component{
     return (
     <div>
        <h3 className="header-name">Trending</h3>
-      <Card data={this.state.data}/>
+      <Card data={this.state.data} onHandleHover={this.handleHover}/>
     </div>);
   }
 }
