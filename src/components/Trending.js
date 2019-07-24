@@ -1,16 +1,12 @@
 import React,{Component} from "react";
 import Loader from "./loader/Loader";
+import {
+  Link
+} from 'react-router-dom'
 import '../containers/App.css';
 
 class Card extends Component{
-  state={
-    isHovered: false
-  }
-/*   handleHover=()=>{
-    this.setState(prevState => ({
-        isHovered: !prevState.isHovered
-    }));
-} */
+ 
   render(){
     const items = this.props.data.results;
     const imageBaseUrl = "http://image.tmdb.org/t/p/w185/";
@@ -24,7 +20,11 @@ class Card extends Component{
                 <img alt={item.original_title} src={imageBaseUrl+item.poster_path} className="card-image"/>
                 <p className="rating">{item.vote_average}</p>
                 <p style={{marginBottom: '20px'}} className="title">{item.title}</p>
-                <button className={`${!item.isHovered?'hide-card':''}`}>More details</button>
+                <Link to={`/details/${item.id}`}>
+                <button className={`${!item.isHovered?'hide-card':''}`} 
+                >More details</button>
+                </Link>
+
               </div>
           ))
           }
@@ -50,8 +50,8 @@ export default class Trending extends Component{
         data: data
     }));
 
-    console.log(data)
-}
+  }
+
   componentDidMount() {
     this.fetchData().then(data => {
       this.setState({

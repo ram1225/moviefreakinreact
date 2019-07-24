@@ -199,6 +199,12 @@ ul li:hover,
   height: 25px;
   color: white;
   font-size: 15px;
+  outline: none;
+}
+
+.card:hover  button:active {
+  box-shadow: 0 1px 0 red;
+  
 }
 
 .card:hover img {

@@ -1,39 +1,18 @@
 import React, { Component } from "react";
 import NavBar from "../components/navigation/NavBar";
 import Header from "../components/header/Header";
-import Trending from "../components/Trending";
-import Comingsoon from "../components/ComingSoon";
-import Favorites from "../components/Favorites";
+import Notfound from '../components/not-found/Notfound';
 import "./App.css";
 import {
   BrowserRouter as Router,
-  Route
+  Route,
+  Switch 
 } from 'react-router-dom';
-
+import AppRoutes from '../components/router/AppRoutes';
 
 class App extends Component {
   constructor(props) {
     super(props);
-
-    this.routes = [
-      {
-        path: "/",
-        exact: true,
-        component: Trending
-      },
-      {
-        path: "/Trending",
-        component: Trending
-      },
-      {
-        path: "/coming soon",
-        component: Comingsoon
-      },
-      {
-        path: "/favorites",
-        component: Favorites
-      }
-    ];
 
     this.state = {
       navlist: [
@@ -52,9 +31,9 @@ class App extends Component {
     this.setState(cState => {
 
     let navlist = cState.navlist.map((item)=> {
-      if(item.name === name) return {name:item.name, isActive: true };
-        return {name:item.name, isActive: false };
-      })
+        if(item.name === name) return {name:item.name, isActive: true };
+          return {name:item.name, isActive: false };
+        })
         return {
           navlist
         }
@@ -82,17 +61,10 @@ class App extends Component {
           </div>
 
           <div className="content-wrapper">
-        
-
-          { this.routes.map((route, index)=>(
-              <Route
-              key={index}
-              path={route.path}
-              exact={route.exact}
-              component={route.component}
-            />
-          ))
-        }
+          <Switch>
+               <AppRoutes/>
+               <Route component={Notfound} />
+               </Switch>
           </div>
         </div>
       </Router>
