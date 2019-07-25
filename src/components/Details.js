@@ -7,14 +7,14 @@ class Details extends React.Component {
             loading: true,
             moviedetails: {}
           };
-        Window.timeOut = {};
+        Window.timeOut1 = {};
         this.fetchData = this.fetchData.bind(this); 
         const { params } = this.props.match
         this.movieId = params.id;
       }
    
 
-    componentDidMount() {
+    componentDidMount() {console.log('details')
     this.fetchData().then(moviedetails => {
         this.setState({
         moviedetails,
@@ -25,12 +25,22 @@ class Details extends React.Component {
 
     render() {
         if (this.state.loading === true) {
-            return (<div> <h3>Movie Details</h3><Loader /></div>);
+            return (<div><h3>Details</h3><Loader /></div>);
           }
-      
-        return <h3>{
-            JSON.stringify(this.state.moviedetails)
-        }</h3>
+        const moviedetails = this.state.moviedetails;
+        const imageBaseUrl = "https://image.tmdb.org/t/p/w1400_and_h450_bestv2/";
+        const normalImageBaseUrl = "http://image.tmdb.org/t/p/w185/";
+        return (
+        <div className="details-container">
+            <div className="cover-image-bg">
+            <img 
+                alt={moviedetails.original_title} 
+                src={imageBaseUrl+moviedetails.backdrop_path} 
+                className=""/>
+            <img alt={moviedetails.original_title} src={normalImageBaseUrl+moviedetails.poster_path} className="card-image details-short-image"/>
+            <h3 className="details-short-image align-below">{moviedetails.original_title}</h3>
+            </div>
+        </div>)
     }
 
   
@@ -42,13 +52,13 @@ class Details extends React.Component {
             return response.json();
             })
             .then(function(myJson) {
-            Window.timeOut = setTimeout(() => res(myJson), 2000);
+            Window.timeOut1 = setTimeout(() => res(myJson), 2000);
             });
         });
     }
 
     componentWillUnmount(){
-        clearTimeout(Window.timeOut)
+        clearTimeout(Window.timeOut1)
     }
 }
 export default Details

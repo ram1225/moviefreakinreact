@@ -1,15 +1,15 @@
 import React, { Component } from "react";
-import Trending from "../../components/Trending";
-import Comingsoon from "../../components/ComingSoon";
-import Favorites from "../../components/Favorites";
-import Details from "../../components/Details"
 import {
   Route
 } from 'react-router-dom';
+
+import Trending from "../../components/Trending";
+import Comingsoon from "../../components/ComingSoon";
+import Favorites from "../../components/Favorites";
+import Details from "../../components/Details";
 export default class AppRoutes extends Component{
     constructor(props) {
         super(props);
-    
         this.routes = [
           {
             path: "/",
@@ -33,6 +33,7 @@ export default class AppRoutes extends Component{
             component: Details
           }
         ];
+       
     }
     render(){
          

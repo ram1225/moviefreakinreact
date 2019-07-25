@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import NavBar from "../components/navigation/NavBar";
 import Header from "../components/header/Header";
 import Notfound from '../components/not-found/Notfound';
+import Details from '../components/Details'
+
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -22,6 +24,10 @@ class App extends Component {
       ]
     };
 
+    this.details =  {
+      path: "/details/:id",
+      component: Details
+    }
     this.itemSelected = this.itemSelected.bind(this);
   }
 
@@ -42,24 +48,19 @@ class App extends Component {
   }
 
   render() {
+   
+    
+    // const show =  this.props.location.pathname===''
     return (
       <Router>
         <div className="container">
           <header>
-            <Header />
+            <Header/>
           </header>
-
-          <div className="nav-wrapper">
-            <section className="sidebar">
-        
               <NavBar
                 navlist={this.state.navlist}
                 itemSelected={this.itemSelected}
               />
-      
-            </section>
-          </div>
-
           <div className="content-wrapper">
           <Switch>
                <AppRoutes/>
@@ -67,6 +68,7 @@ class App extends Component {
                </Switch>
           </div>
         </div>
+
       </Router>
     );
   }

@@ -83,12 +83,9 @@ export default class Trending extends Component{
       }
   
     return (
-    <div>
+    <div className="paddingLeft">
        <h3 className="header-name">Trending</h3>
       <Card data={this.state.data} onHandleHover={this.handleHover}/>
     </div>);
   }
 }
-
-//<img alt={item.BoxOffice} src={item.Poster}/>
-//   const URL = "http://www.omdbapi.com/?i=tt3896198&apikey=5135675b";
