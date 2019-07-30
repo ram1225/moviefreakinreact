@@ -279,10 +279,25 @@ ul li:hover,
 
 .align-below{
   top: 18em;
-  left: 30px;
   z-index: 3;
+  padding: 0px;
+}
+
+.rating-position{
+  top: 25em;
+  color: white;
+  padding: 0px;
 }
 
 .poster-image{
   width: 100%;
+}
+
+/* movie-desc */
+.movie-desc{
+  margin: 0px 25px;
+}
+
+.cast-item{
+  cursor: pointer;
 }

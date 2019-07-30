@@ -1,5 +1,7 @@
 import React from 'react'
 import Loader from '../components/loader/Loader'
+import Credits from '../components/Credits'
+
 class Details extends React.Component {
     constructor(props) {
         super(props);
@@ -11,10 +13,12 @@ class Details extends React.Component {
         this.fetchData = this.fetchData.bind(this); 
         const { params } = this.props.match
         this.movieId = params.id;
+        this.description="Description"
+        this.castTitle = "Top Cast"
       }
    
 
-    componentDidMount() {console.log('details')
+    componentDidMount() { 
     this.fetchData().then(moviedetails => {
         this.setState({
         moviedetails,
@@ -35,6 +39,16 @@ class Details extends React.Component {
             <div className="cover-image-bg" style={{backgroundImage: `url(${imageBaseUrl+moviedetails.backdrop_path}` }}>
             <img alt={moviedetails.original_title} src={normalImageBaseUrl+moviedetails.poster_path} className="card-image details-short-image"/>
             <h3 className="details-short-image align-below">{moviedetails.original_title}</h3>
+            <h4 className="details-short-image rating-position">Popularity: {moviedetails.vote_average*10}%</h4>
+            </div>
+            <div className="movie-desc">
+            <h3>{this.description}</h3>
+            <p>{moviedetails.overview}</p>
+            <div>
+            <h3>{this.castTitle}</h3>
+            <Credits id={this.movieId}/>
+            </div>
+            
             </div>
         </div>)
     }

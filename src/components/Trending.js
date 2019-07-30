@@ -21,7 +21,7 @@ class Card extends Component{
                 <p className="rating">{item.vote_average}</p>
                 <p style={{marginBottom: '20px'}} className="title">{item.title}</p>
                 <Link to={`/details/${item.id}`}>
-                <button className={`${!item.isHovered?'hide-card':''}`} 
+                <button className={`cast-item ${!item.isHovered?'hide-card':''}`} 
                 >More details</button>
                 </Link>
 
