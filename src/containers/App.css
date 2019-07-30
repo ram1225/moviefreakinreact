@@ -253,10 +253,17 @@ ul li:hover,
 
 /* movie details component */
 .cover-image-bg{
-  height: 250px;
-  width: 100%;
+  margin-top: 30px;
+  width: 100vw;
+  height: 500px;
   opacity: 0.5;
   z-index: 1;
+  /* background-image: url("https://image.tmdb.org/t/p/w1400_and_h450_bestv2//1TUg5pO1VZ4B0Q1amk3OlXvlpXV.jpg"); */
+  background-color: #cccccc;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
 }
 
 .details-container{
@@ -274,4 +281,8 @@ ul li:hover,
   top: 18em;
   left: 30px;
   z-index: 3;
+}
+
+.poster-image{
+  width: 100%;
 }

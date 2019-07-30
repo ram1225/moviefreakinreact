@@ -32,11 +32,7 @@ class Details extends React.Component {
         const normalImageBaseUrl = "http://image.tmdb.org/t/p/w185/";
         return (
         <div className="details-container">
-            <div className="cover-image-bg">
-            <img 
-                alt={moviedetails.original_title} 
-                src={imageBaseUrl+moviedetails.backdrop_path} 
-                className=""/>
+            <div className="cover-image-bg" style={{backgroundImage: `url(${imageBaseUrl+moviedetails.backdrop_path}` }}>
             <img alt={moviedetails.original_title} src={normalImageBaseUrl+moviedetails.poster_path} className="card-image details-short-image"/>
             <h3 className="details-short-image align-below">{moviedetails.original_title}</h3>
             </div>
@@ -53,7 +49,7 @@ class Details extends React.Component {
             })
             .then(function(myJson) {
             Window.timeOut1 = setTimeout(() => res(myJson), 2000);
-            });
+            })
         });
     }
 
