@@ -17,6 +17,7 @@ class App extends Component {
     super(props);
 
     this.state = {
+      menustate: false,
       navlist: [
         { name: "Trending", isActive: true },
         { name: "Coming Soon", isActive: false },
@@ -46,7 +47,12 @@ class App extends Component {
     });
     }
   }
-
+  menuHandle=()=>{
+    console.log('menu');
+    this.setState({
+      menustate: !this.state.menustate
+    })
+  }
   render() {
    
     
@@ -55,11 +61,13 @@ class App extends Component {
       <Router>
         <div className="container">
           <header>
-            <Header/>
+            <Header onMenuHandle={()=>this.menuHandle()} 
+        />
           </header>
               <NavBar
                 navlist={this.state.navlist}
                 itemSelected={this.itemSelected}
+                menustate={this.state.menustate}
               />
           <div className="content-wrapper">
           <Switch>

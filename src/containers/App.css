@@ -47,7 +47,7 @@ header {
   align-items: center;
   height: 100%;
   width: 200px;
-  margin: 0 0 2px 50px;
+  margin: 0 0 2px 0px;
   font-weight: bold;
   color: white;
 }
@@ -300,4 +300,32 @@ ul li:hover,
 
 .cast-item{
   cursor: pointer;
+}
+
+.menuicon{
+  display: none !important;
+}
+
+
+@media (min-width: 360px) and (max-width: 767px) {
+  
+.nav-wrapper{
+  display: none;
+}
+.paddingLeft{
+  padding-left: 0px;
+}
+.menuicon{
+  display: block !important;
+  color: white;
+}
+.menuicon:hover,  .menuicon:active{
+  display: block !important;
+  color: #e36e76;
+}
+
+.dblock{
+  display: block;
+  z-index: 9999;
+}
 }

@@ -15,6 +15,7 @@ function Header(props){
     return (
         <div className="header">
               <div className="content"> 
+              <i className="fa fa-bars menuicon" onClick={props.onMenuHandle}></i>
               <Link to={'/Trending'}>
               {(!show)? <FontAwesomeIcon icon={faArrowLeft} />:''}
               </Link>

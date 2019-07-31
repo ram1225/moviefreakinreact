@@ -13,7 +13,7 @@ import { withRouter} from 'react-router';
     const show = props.location.pathname.indexOf('details') === -1;
      return (show)?
      (
-        <div className="nav-wrapper">
+        <div className={`nav-wrapper ${props.menustate?'dblock':''}`}>
             <section className="sidebar">
                 <nav>
                     <ul> 
