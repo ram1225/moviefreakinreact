@@ -131,6 +131,7 @@ section.sidebar {
   top: 0;
   bottom: 0;
   background: #191c1f;
+  z-index: 99;  
 }
 
 ul {

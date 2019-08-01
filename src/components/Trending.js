@@ -79,7 +79,7 @@ export default class Trending extends Component{
   }
   render() {
     if (this.state.loading === true) {
-        return (<div> <h3>Trending</h3><Loader /></div>);
+        return (<div className="paddingLeft"> <h3>Trending</h3><Loader /></div>);
       }
   
     return (

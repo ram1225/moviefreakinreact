@@ -15,11 +15,12 @@ function Header(props){
     return (
         <div className="header">
               <div className="content"> 
-              <i className="fa fa-bars menuicon" onClick={props.onMenuHandle}></i>
+              {(show)? <i className="fa fa-bars menuicon" onClick={props.onMenuHandle}></i>:''}
+              
               <Link to={'/Trending'}>
-              {(!show)? <FontAwesomeIcon icon={faArrowLeft} />:''}
+              {(!show)? <FontAwesomeIcon style={{paddingLeft: '15px'}} icon={faArrowLeft} />:''}
               </Link>
-                 <span style={{paddingLeft: '15px'}}>{content}</span>
+                 <p style={{paddingLeft: '15px', whiteSpace: 'nowrap'}}>{content}</p>
               </div>
             <Search/>
         </div>
