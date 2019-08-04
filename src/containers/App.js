@@ -4,6 +4,11 @@ import Header from "../components/header/Header";
 import Notfound from '../components/not-found/Notfound';
 import Details from '../components/Details'
 
+import withFirebaseAuth from 'react-with-firebase-auth'
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from './../firebaseConfig';
+
 import "./App.css";
 import {
   BrowserRouter as Router,
@@ -11,6 +16,14 @@ import {
   Switch 
 } from 'react-router-dom';
 import AppRoutes from '../components/router/AppRoutes';
+
+
+const firebaseApp = firebase.initializeApp(firebaseConfig);
+
+const firebaseAppAuth = firebaseApp.auth();
+const providers = {
+  googleProvider: new firebase.auth.GoogleAuthProvider(),
+};
 
 class App extends Component {
   constructor(props) {
@@ -54,32 +67,47 @@ class App extends Component {
     })
   }
   render() {
-   
+    const {  user, signOut, signInWithGoogle } = this.props;
     
-    // const show =  this.props.location.pathname===''
-    return (
-      <Router>
-        <div className="container">
-          <header>
-            <Header onMenuHandle={()=>this.menuHandle()} 
-        />
-          </header>
-              <NavBar
-                navlist={this.state.navlist}
-                itemSelected={this.itemSelected}
-                menustate={this.state.menustate}
-              />
-          <div className="content-wrapper">
-          <Switch>
-               <AppRoutes/>
-               <Route component={Notfound} />
-               </Switch>
-          </div>
+     if(!user) {
+      return (
+        <div className="prelogin">
+        <h3>Hello,</h3>
+        <h1>Please sign in to access the app!</h1>
+        <button className="customButton" onClick={signInWithGoogle}>Login via Google!</button>
         </div>
-
-      </Router>
-    );
+       )
+     }else{
+      return (
+        <Router>
+  
+          <div className="container">
+            <header>
+              <Header user={user} signOut={signOut} onMenuHandle={()=>this.menuHandle()} 
+          />
+            </header>
+                <NavBar
+                  navlist={this.state.navlist}
+                  itemSelected={this.itemSelected}
+                  menustate={this.state.menustate}
+                />
+            <div className="content-wrapper">
+            <Switch>
+                 <AppRoutes/>
+                 <Route component={Notfound} />
+                 </Switch>
+            </div>
+          </div>
+  
+        </Router>
+      );
+     }
   }
 }
 
-export default App;
+export default withFirebaseAuth({
+  providers,
+  firebaseAppAuth,
+})(App);
+
+// export default App;

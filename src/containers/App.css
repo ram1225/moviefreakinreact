@@ -307,26 +307,62 @@ ul li:hover,
   display: none !important;
 }
 
+ /* prelogin */
+ .prelogin{
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-direction: column;
+   height: calc(100vh - 50px);
+   background-color: aliceblue;
+ }
+ .prelogin *{
+  color: #191c1f;
+ }
+ .prelogin h1{
+   color: #ff424f;
+ }
 
+ .customButton{
+   display: block;
+   background-color: #ff424f;
+   height: 2em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 18px;
+    font-family: serif;
+    outline: none;
+ }
+ .customButton:hover{
+    background-color: #191c1f;
+}
+ 
 @media (min-width: 360px) and (max-width: 767px) {
   
-.nav-wrapper{
-  display: none;
-}
-.paddingLeft{
-  padding-left: 0px;
-}
-.menuicon{
-  display: block !important;
-  color: white;
-}
-.menuicon:hover,  .menuicon:active{
-  display: block !important;
-  color: #e36e76;
-}
+  .nav-wrapper{
+    display: none;
+  }
+  .paddingLeft{
+    padding-left: 0px;
+  }
+  .menuicon{
+    display: block !important;
+    color: white;
+  }
+  .menuicon:hover,  .menuicon:active{
+    display: block !important;
+    color: #e36e76;
+  }
+  
+  .dblock{
+    display: block;
+    z-index: 9999;
+  }
 
-.dblock{
-  display: block;
-  z-index: 9999;
-}
-}
+  .prelogin h1{
+    color: #ff424f;
+    font-size: 22px;
+  }
+ 
+  }

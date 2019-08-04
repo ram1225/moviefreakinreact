@@ -11,7 +11,7 @@ import {
 function Header(props){
     
     const show = props.location.pathname.indexOf('details') === -1;
-    let content= !show?'Movie Details':'App';
+    let content= !show?'Movie Details':'Hello '+ props.user.displayName;
     return (
         <div className="header">
               <div className="content"> 
@@ -21,6 +21,7 @@ function Header(props){
               {(!show)? <FontAwesomeIcon style={{paddingLeft: '15px'}} icon={faArrowLeft} />:''}
               </Link>
                  <p style={{paddingLeft: '15px', whiteSpace: 'nowrap'}}>{content}</p>
+                 <button className="customButton" onClick={props.signOut}>Sign out</button>
               </div>
             <Search/>
         </div>
