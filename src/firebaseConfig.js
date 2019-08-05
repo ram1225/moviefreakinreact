@@ -7,13 +7,7 @@
  
   // Your web app's Firebase configuration
   var firebaseConfig = {
-    apiKey: "",
-    authDomain: "reactmovies1225.firebaseapp.com",
-    databaseURL: "https://reactmovies1225.firebaseio.com",
-    projectId: "reactmovies1225",
-    storageBucket: "",
-    messagingSenderId: "",
-    appId: ""
+
   };
   // Initialize Firebase
   // firebase.initializeApp(firebaseConfig);

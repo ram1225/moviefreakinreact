@@ -29,7 +29,7 @@ header {
 .header-name {
   margin-top: 50px;
   margin-bottom: 20px;
-  color: #ff424f; 
+  color: #ff424f;
   /* #ff424f */
 }
 
@@ -37,7 +37,7 @@ header {
   display: flex;
   height: 50px;
   background: black;
-    /* #ff424f */
+  /* #ff424f */
   position: fixed;
   width: 100%;
 }
@@ -46,13 +46,13 @@ header {
   display: flex;
   align-items: center;
   height: 100%;
-  width: 200px;
+
   margin: 0 0 2px 0px;
   font-weight: bold;
   color: white;
 }
 
-.search-container{
+.search-container {
   color: white;
   align-items: center;
   display: flex;
@@ -63,17 +63,17 @@ header {
 /* header ends */
 
 /* search starts */
-.hidden{
+.hidden {
   display: none !important;
 }
-.searchbar{
+.searchbar {
   outline: none;
   border: #222b31 1px solid;
   width: 200px;
   margin-right: 2px;
 }
 
-.search-wrapper{
+.search-wrapper {
   width: 18em;
   height: 500px;
   display: block;
@@ -84,27 +84,27 @@ header {
   right: 1em;
 }
 
-.search-results{
+.search-results {
   display: flex;
   flex-direction: row;
   width: 100%;
 }
 
-.search-results img{
+.search-results img {
   width: 25%;
   height: 25%;
 }
 
-.search-results div p{
- margin-left: 10px;
+.search-results div p {
+  margin-left: 10px;
 }
 
-.search-results div p:nth-child(2){
+.search-results div p:nth-child(2) {
   font-size: 14px;
   font-weight: normal;
- }
+}
 
-.search-wrapper ul{
+.search-wrapper ul {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -113,15 +113,14 @@ header {
   padding: 0;
 }
 
-.search-wrapper ul li{
+.search-wrapper ul li {
   padding: 0px 5px;
   font-weight: bold;
-
 }
 /* search ends here */
 
 /* nav starts */
-h3{
+h3 {
   margin-top: 50px;
 }
 section.sidebar {
@@ -131,7 +130,7 @@ section.sidebar {
   top: 0;
   bottom: 0;
   background: #191c1f;
-  z-index: 99;  
+  z-index: 99;
 }
 
 ul {
@@ -173,10 +172,9 @@ ul li:hover,
 .content-wrapper {
   padding: 20px 20px 20px 20px;
   background: #222b31;
-
 }
 
-.paddingLeft{
+.paddingLeft {
   padding-left: 220px;
 }
 
@@ -191,13 +189,11 @@ ul li:hover,
   position: relative;
 }
 
-
-
-.card:hover  button{
+.card:hover button {
   position: absolute;
   top: 35%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   background: #ff424f;
   border: none;
   border-radius: 5px;
@@ -207,20 +203,19 @@ ul li:hover,
   outline: none;
 }
 
-.card:hover  button:active {
+.card:hover button:active {
   box-shadow: 0 1px 0 red;
-  
 }
 
 .card:hover img {
   opacity: 0.2;
 }
 
-.show-card{
+.show-card {
   display: flex;
 }
 
-.hide-card{
+.hide-card {
   display: none;
 }
 
@@ -253,7 +248,7 @@ ul li:hover,
 }
 
 /* movie details component */
-.cover-image-bg{
+.cover-image-bg {
   margin-top: 30px;
   width: 100vw;
   height: 500px;
@@ -267,102 +262,108 @@ ul li:hover,
   position: relative;
 }
 
-.details-container{
- margin-left: -20px;
+.details-container {
+  margin-left: -20px;
 }
 
-.details-short-image{
+.details-short-image {
   position: absolute;
   top: 5em;
   left: 25px;
   z-index: 2;
 }
 
-.align-below{
+.align-below {
   top: 18em;
   z-index: 3;
   padding: 0px;
 }
 
-.rating-position{
+.rating-position {
   top: 25em;
   color: white;
   padding: 0px;
 }
 
-.poster-image{
+.poster-image {
   width: 100%;
 }
 
 /* movie-desc */
-.movie-desc{
+.movie-desc {
   margin: 0px 25px;
 }
 
-.cast-item{
+.cast-item {
   cursor: pointer;
 }
 
-.menuicon{
+.menuicon {
   display: none !important;
 }
 
- /* prelogin */
- .prelogin{
-   display: flex;
-   align-items: center;
-   justify-content: center;
-   flex-direction: column;
-   height: calc(100vh - 50px);
-   background-color: aliceblue;
- }
- .prelogin *{
-  color: #191c1f;
- }
- .prelogin h1{
-   color: #ff424f;
- }
-
- .customButton{
-   display: block;
-   background-color: #ff424f;
-   height: 2em;
-    border: none;
-    border-radius: 5px;
-    color: white;
-    font-size: 18px;
-    font-family: serif;
-    outline: none;
- }
- .customButton:hover{
-    background-color: #191c1f;
+/* prelogin */
+.prelogin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height:  100vh ;
+  background-color: aliceblue;
 }
- 
+.prelogin * {
+  color: #191c1f;
+}
+.prelogin h1 {
+  color: #ff424f;
+}
+
+.customButton {
+  display: block;
+  background-color: #ff424f;
+  height: 1.5em;
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 16px;
+  font-family: serif;
+  outline: none;
+  margin-left: 25px;
+  width: 5em;
+}
+.logoutbtn{
+  width: 200px;
+  height: 2em;
+}
+.customButton:hover {
+  background-color: white;
+  color: #ff424f;
+}
+
 @media (min-width: 360px) and (max-width: 767px) {
-  
-  .nav-wrapper{
+  .nav-wrapper {
     display: none;
   }
-  .paddingLeft{
+  .paddingLeft {
     padding-left: 0px;
   }
-  .menuicon{
+  .menuicon {
     display: block !important;
     color: white;
   }
-  .menuicon:hover,  .menuicon:active{
+  .menuicon:hover,
+  .menuicon:active {
     display: block !important;
     color: #e36e76;
   }
-  
-  .dblock{
+
+  .dblock {
     display: block;
     z-index: 9999;
   }
 
-  .prelogin h1{
+  .prelogin h1 {
     color: #ff424f;
     font-size: 22px;
   }
- 
-  }
+}

@@ -74,7 +74,7 @@ class App extends Component {
         <div className="prelogin">
         <h3>Hello,</h3>
         <h1>Please sign in to access the app!</h1>
-        <button className="customButton" onClick={signInWithGoogle}>Login via Google!</button>
+        <button className="customButton logoutbtn" onClick={signInWithGoogle}>Login via Google!</button>
         </div>
        )
      }else{
